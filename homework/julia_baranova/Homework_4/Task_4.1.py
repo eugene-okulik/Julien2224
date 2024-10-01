@@ -9,5 +9,5 @@ my_dict['list'].pop(1)  # удаление второго элемента 'list
 my_dict['dict']['i am a tuple'] = 12345  # добавление элемента с ключом 'i am a tuple' в 'dict'
 del my_dict['dict']['one']  # удаление первого эелемента 'dict'
 my_dict['set'].add('123')  # добавление элемента '123' в 'set'
-my_dict['set'].remove(1) # удаление элемента 1 из 'set'
+my_dict['set'].remove(1)  # удаление элемента 1 из 'set'
 print(my_dict)  # вывод на экран всего словаря
