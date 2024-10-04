@@ -8,6 +8,3 @@ number3_index = text3.index('9')
 print(int(text1[number1_index:]) + 10)
 print(int(text2[number2_index:]) + 10)
 print(int(text3[number3_index:]) + 10)
-
-
-
