@@ -6,4 +6,3 @@ for number in range(1, 101):
     elif number % 5 == 0:
         number = 'Buzz'
     print(number)
-  
