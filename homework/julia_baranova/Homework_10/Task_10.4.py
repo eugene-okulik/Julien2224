@@ -8,7 +8,7 @@ PRICE_LIST = '''тетрадь 50р
 
 new_list = PRICE_LIST.split()
 
-things = new_list [::2]
+things = new_list[::2]
 prices = map(lambda x: int(x.rstrip('р')), new_list[1::2])
 
 things_prices_dict = dict(zip(things, prices))

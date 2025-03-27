@@ -11,10 +11,11 @@ def operation(func):
             return func(f, s, op)
         return wrapper
 
+
 @operation
 def calc(f, s, op):
     if op == '+':
-        return f+ s
+        return f + s
     elif op == '-':
         return f - s
     elif op == '%':
@@ -24,7 +25,7 @@ def calc(f, s, op):
 
 
 numbers = input('Please write two numbers:')
-first, second = map(int,numbers.split())
+first, second = map(int, numbers.split())
 
 result = calc(first, second)
 print(result)

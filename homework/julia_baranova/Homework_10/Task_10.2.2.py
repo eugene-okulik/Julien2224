@@ -1,4 +1,4 @@
-def repeat_me (count):
+def repeat_me(count):
     def decorator(func):
         def wrapper(*args):
             for i in range(count):
