@@ -1,27 +1,27 @@
-def operation(func):
-    def wrapper(f, s):
-        if f < 0 or s < 0:
-            op = '*'
-        elif f == s:
-            op = '+'
-        elif f > s:
-            op = '-'
+def operation_chooser(func):
+    def wrapper(first, second):
+        if first < 0 or second < 0:
+            operation = '*'
+        elif first == second:
+            operation = '+'
+        elif first > second:
+            operation = '-'
         else:
-            op = '%'
-            return func(f, s, op)
-        return wrapper
+            operation = '%'
+        return func(first, second, operation)
+    return wrapper
 
 
-@operation
-def calc(f, s, op):
-    if op == '+':
-        return f + s
-    elif op == '-':
-        return f - s
-    elif op == '%':
-        return f / s
-    elif op == '*':
-        return f * s
+@operation_chooser
+def calc(first, second, operation):
+    if operation == '+':
+        return first + second
+    elif operation == '-':
+        return first - second
+    elif operation == '%':
+        return first / second
+    elif operation == '*':
+        return first * second
 
 
 numbers = input('Please write two numbers:')
