@@ -27,8 +27,8 @@ class SchoolTextbook(Book):
 
     def print_details(self):
         return (f'Название: {self.title}, Автор: {self.author}, страниц: {self.pages}, '
-            f'предмет: {self.subject}, класс: {self.class_number}'
-            f'{", зарезервирована" if self.reserved else ""}')
+                f'предмет: {self.subject}, класс: {self.class_number}'
+                f'{", зарезервирована" if self.reserved else ""}')
 
 
 school_text_book_1 = SchoolTextbook('Алгебра', 'Иванов', '200', '978-0-6-269366-2',
@@ -39,7 +39,6 @@ school_text_book_3 = SchoolTextbook('Русский язык', 'Сидоров',
                                     False, 'Русский язык', '8', False)
 school_text_book_4 = SchoolTextbook('Бег', 'Козлов', '224', '978-0-15-602760-1',
                                     False, 'Физкультура', '7', False)
-
 
 print(school_text_book_1.print_details())
 print(school_text_book_2.print_details())
