@@ -26,9 +26,9 @@ class SchoolTextbook(Book):
         self.exercises = exercises
 
     def print_details(self):
-         return (f'Название: {self.title}, Автор: {self.author}, страниц: {self.pages}, '
-                 f'предмет: {self.subject}, класс: {self.class_number}'
-                 f''f'{", зарезервирована" if self.reserved else ""}')
+        return (f'Название: {self.title}, Автор: {self.author}, страниц: {self.pages}, '
+            f'предмет: {self.subject}, класс: {self.class_number}'
+            f'{", зарезервирована" if self.reserved else ""}')
 
 
 school_text_book_1 = SchoolTextbook('Алгебра', 'Иванов', '200', '978-0-6-269366-2',
