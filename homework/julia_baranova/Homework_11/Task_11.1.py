@@ -10,8 +10,8 @@ class Book():
         self.reserved = reserved
 
     def print_details(self):
-        return (f'Название: {self.title}, Автор: {self.author}, страниц: {self.pages},'
-      f' материал: {self.material}{', зарезервирована' if self.reserved else ''}')
+        return (f'Название: {self.title}, Автор: {self.author}, страниц: {self.pages}, '
+                f'материал: {self.material}' f'{", зарезервирована" if self.reserved else ""}')
 
 book_1 = Book('Идиот', 'Достоевский', '500', '978-0-6-269366-2', True)
 book_2 = Book('1984', 'Оруэл', '328','978-0-452-28423-4',False)

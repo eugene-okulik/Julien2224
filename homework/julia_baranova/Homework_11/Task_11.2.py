@@ -4,11 +4,11 @@ class Book(ABC):
     material = 'бумага'
     is_text = True
 
-    def __init__(self, title, author, pages,isbn, reserved):
+    def __init__(self, title, author, pages, ISBN, reserved):
         self.title = title
         self.author = author
         self.pages = pages
-        self.isbn = isbn
+        self.ISBN = ISBN
         self.reserved = reserved
 
     @abstractmethod
@@ -17,16 +17,17 @@ class Book(ABC):
 
 class SchoolTextbook(Book):
 
-    def __init__(self, title, author, pages, isbn, reserved, subject, class_number, exercises):
-        super().__init__(title, author, pages, isbn, reserved)
+    def __init__(self, title, author, pages, ISBN, reserved, subject, class_number, exercises):
+        super().__init__(title, author, pages, ISBN, reserved)
         self.subject = subject
         self.class_number = class_number
         self.exercises = exercises
 
 
     def print_details(self):
-         return (f'Название: {self.title}, Автор: {self.author}, страниц: {self.pages},'
-                 f' предмет: {self.subject}, класс: {self.class_number}{', зарезервирована' if self.reserved else ''}')
+         return (f'Название: {self.title}, Автор: {self.author}, страниц: {self.pages}, '
+                 f'предмет: {self.subject}, класс: {self.class_number}'
+                 f''f'{", зарезервирована" if self.reserved else ""}')
 
 
 school_text_book_1 = SchoolTextbook('Алгебра', 'Иванов', '200', '978-0-6-269366-2',
