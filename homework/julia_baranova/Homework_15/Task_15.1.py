@@ -45,7 +45,8 @@ print(cursor.fetchall())
 cursor.execute(" SELECT * FROM books WHERE taken_by_student_id = %s", (student_id,))
 print(cursor.fetchall())
 select_query = '''
-SELECT students.id, students.name, students.second_name, books.title, groups.title, subjets.title, lessons.title, marks.value
+SELECT students.id, students.name, students.second_name, books.title, groups.title, subjets.title, lessons.title, 
+marks.value
 FROM students
 JOIN books on students.id = books.taken_by_student_id
 JOIN `groups` on students.group_id = groups.id
