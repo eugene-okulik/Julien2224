@@ -13,7 +13,9 @@ db = mysql.connect(
     database=os.getenv("DB_NAME")
 )
 
-file_path = '/Users/julia.baranova/PycharmProjects/Julien2224/homework/eugene_okulik/Lesson_16/hw_data/data.csv'
+current_file_path = os.path.abspath(__file__)
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(current_file_path))))
+file_path = os.path.join(project_root, 'homework', 'eugene_okulik', 'Lesson_16', 'hw_data', 'data.csv')
 info_from_file = []
 with open(file_path) as csv_file:
     file_data = csv.reader(csv_file)
