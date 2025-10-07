@@ -6,6 +6,9 @@ POSITIVE_TEST_DATA = [
 NEGATIVE_TEST_DATA = [{"data": {"color": "pink", "size": "small"}},
                       {"name": "New Object555"}
                       ]
+TEST_DATA_FOR_UPDATE_OBJECT_TEST = [{"data": {"color": "white", "size": "small"}},
+                                    {"name": "Updated Post Name"}
+                                    ]
 
 
 @pytest.mark.parametrize('data', POSITIVE_TEST_DATA)
@@ -32,19 +35,9 @@ def test_update_all_object_invalid_data(update_all_object_endpoint, object_id, d
     update_all_object_endpoint.check_response_status_code_is_not_200()
 
 
-def test_update_name_of_object(update_part_of_object_endpoint, object_id):
-    body = {
-        "name": "Updated Post Name",
-    }
-    update_part_of_object_endpoint.update_part_of_object(object_id, body)
-    update_part_of_object_endpoint.check_response_status_code_is_200()
-
-
-def test_update_data_of_object(update_part_of_object_endpoint, object_id):
-    body = {
-        "data": {"color": "white", "size": "small"}
-    }
-    update_part_of_object_endpoint.update_part_of_object(object_id, body)
+@pytest.mark.parametrize('data', TEST_DATA_FOR_UPDATE_OBJECT_TEST)
+def test_update_part_of_object(update_part_of_object_endpoint, object_id, data):
+    update_part_of_object_endpoint.update_part_of_object(object_id, data)
     update_part_of_object_endpoint.check_response_status_code_is_200()
 
 

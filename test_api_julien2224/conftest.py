@@ -26,7 +26,8 @@ def delete_object_endpoint():
 
 
 @pytest.fixture()
-def object_id(create_object_endpoint):
+def object_id(create_object_endpoint, delete_object_endpoint):
     payload = {"name": "New Object555", "data": {"color": "pink", "size": "small"}}
     create_object_endpoint.create_new_object(payload)
     yield create_object_endpoint.object_id
+    delete_object_endpoint.delete_object(object_id)

@@ -16,4 +16,4 @@ class Endpoint:
     def check_response_status_code_is_not_200(self):
         print('=================================', self.response.status_code)
 
-        assert self.response.status_code != 200
+        assert self.response.status_code == 400
